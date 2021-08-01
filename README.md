@@ -29,5 +29,9 @@ https://www.ics.uci.edu/~fielding/pubs/dissertation/top.html
 ## `index.ejs`
 'index' is just a term generally used. Every resource can have an index, the goal is to show ALL of a resource (not literally ALL) but the overall purpose for a given resource is to render MULTIPLE of that resource.
 
+## Forms
+HTML forms in our browser can only send GET or POST requests, not PUT, PATCH or DELETE requests. 
+Fortunately, we can fake it. 
+
 ---
 ##### *from Colt Steele's Web Development Bootcamp 2021*
