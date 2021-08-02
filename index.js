@@ -117,6 +117,20 @@ app.patch('/comments/:id', (req, res) => {
     res.redirect('/comments');
 })
 
+// *****************************************************
+// DELETE/DESTROY ROUTE
+// DELETE /comments/:id -> Destroy one comment
+// *****************************************************
+app.delete('/comments/:id', (req, res) => {
+    const { id } = req.params;
+    const foundComment = comments.find(c => c.id === id);
+    // To REMOVE the comment from the array, we'll use the 'filter' method
+    // We want every object that does not have the id
+    // Might seem overkill to create a whole new array, but it's best practice NOT to mutate objects/arrays but instead copy them
+    comments =  comments.filter(c => c.id !== id)
+    res.redirect('/comments');
+})
+
 
 
 
@@ -135,8 +149,7 @@ app.listen(3000, ()=> {
 
 
 
-// DELETE/DESTROY ROUTE
-// DELETE /comments/:id -> Destroy one comment
+
 
 
 
